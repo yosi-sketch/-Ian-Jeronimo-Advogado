@@ -1,6 +1,6 @@
-# SG Advocacia
+# Karine Lima — Advocacia Familiarista
 
-Site institucional da SG Advocacia, escritório em Belo Horizonte com atendimento presencial e on-line.
+Site institucional de Karine Lima, advogada familiarista em Teófilo Otoni, Minas Gerais.
 
 ## Desenvolvimento
 
@@ -15,4 +15,6 @@ Abra http://localhost:3000 para visualizar o site.
 - Tailwind CSS 4
 - Framer Motion
 
-As imagens da marca ficam em public/sg-advocacia. Metadados e idioma são definidos em app/layout.tsx.
+Logo, retratos e conteúdos visuais ficam em `public/karine-lima`. Metadados, idioma e cor do navegador são definidos em `app/layout.tsx`.
+
+Ao definir o domínio de produção, configure `NEXT_PUBLIC_SITE_URL` para ativar os cartões de compartilhamento com a imagem da marca.

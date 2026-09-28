@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -16,19 +16,53 @@ const bodyFont = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
+const shareImage = "/karine-lima/compartilhamento.jpg";
+
 export const metadata: Metadata = {
-  title: "SG Advocacia | Consultoria e Assessoria em Belo Horizonte",
+  ...(metadataBase ? { metadataBase } : {}),
+  title: "Karine Lima | Advocacia Familiarista em Teófilo Otoni",
   description:
-    "Atendimento jurídico próximo em Belo Horizonte e on-line. Conheça a SG Advocacia, suas áreas de atuação e formas de contato.",
+    "Advocacia familiarista em Teófilo Otoni, MG. Informações sobre divórcio, guarda, convivência familiar, pensão alimentícia e adoção.",
   keywords: [
-    "SG Advocacia",
-    "advocacia em Belo Horizonte",
-    "advogada no Lindéia",
+    "Karine Lima",
+    "advogada familiarista em Teófilo Otoni",
     "direito de família",
-    "direito previdenciário",
-    "pensão por morte",
-    "orientação jurídica",
+    "divórcio em Teófilo Otoni",
+    "guarda e convivência familiar",
+    "pensão alimentícia",
+    "adoção",
   ],
+  openGraph: {
+    title: "Karine Lima | Advocacia Familiarista",
+    description:
+      "Informação jurídica e atendimento cuidadoso em Direito de Família, em Teófilo Otoni, Minas Gerais.",
+    locale: "pt_BR",
+    siteName: "Karine Lima",
+    type: "website",
+    images: metadataBase
+      ? [
+          {
+            url: shareImage,
+            width: 1200,
+            height: 630,
+            alt: "Karine Lima — Advocacia Familiarista em Teófilo Otoni",
+          },
+        ]
+      : undefined,
+  },
+  twitter: {
+    card: metadataBase ? "summary_large_image" : "summary",
+    title: "Karine Lima | Advocacia Familiarista",
+    description:
+      "Informação jurídica e atendimento cuidadoso em Direito de Família, em Teófilo Otoni, Minas Gerais.",
+    ...(metadataBase ? { images: [shareImage] } : {}),
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#faf7f2",
 };
 
 export default function RootLayout({

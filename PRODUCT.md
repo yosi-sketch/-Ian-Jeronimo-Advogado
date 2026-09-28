@@ -1,28 +1,31 @@
-# SG Advocacia
+# Karine Lima — Advocacia Familiarista
 
 ## Plataforma
-Site institucional responsivo em Next.js, com navegação por seções, detalhes de áreas de atuação em modal e contato pelos canais informados.
+Site institucional responsivo em Next.js, com navegação por seções, detalhes das áreas de atuação em modal e links de contato.
 
 ## Público
-Pessoas que procuram orientação jurídica em Belo Horizonte ou atendimento on-line.
+Pessoas que procuram informação e orientação jurídica em Direito de Família em Teófilo Otoni e região.
 
 ## Objetivo
-Apresentar a SG Advocacia, sua equipe, áreas de atuação, avaliações públicas e endereço; facilitar o acesso ao perfil do Instagram e à localização do escritório.
+Apresentar Karine Lima, sua atuação familiarista e formas de contato e localização.
 
 ## Identidade
-- Nome: SG Advocacia — Consultoria e Assessoria.
-- Paleta extraída da marca: vermelho, preto e tons quentes de marfim.
+- Nome: Karine Lima, advogada familiarista.
+- Paleta extraída da marca: marrom quente, tons de areia e marfim.
 - Tipografia: Cormorant Garamond nos títulos e Plus Jakarta Sans nos textos.
 - Tom: acolhedor, sóbrio, claro e informativo.
 
 ## Conteúdo e mídia
-- Retrato da Dra. Fernanda e fotografia da equipe fornecidos pelo cliente.
-- Materiais informativos sobre pensão por morte e violência doméstica.
-- Endereço informado: R. das Perpétuas, 475 - E, Lindéia, Belo Horizonte - MG, 30690-270.
-- Instagram indicado nos materiais: @sgadvs.
-- Nota apresentada pelo cliente: 5,0 no Google.
+- Endereço: R. Dr. Manoel Esteves, 333, sala 210, Centro, Teófilo Otoni - MG, 39800-090.
+- Instagram: @karinelima.adv — https://www.instagram.com/karinelima.adv/.
+- Áreas representadas nos materiais: divórcio, convivência familiar e adoção.
+- Logo, retratos profissionais e publicações informativas fornecidos para o projeto.
+- Avaliações públicas podem ser consultadas no perfil do Google; depoimentos individuais não são reproduzidos no site.
+
+## Contato
+Instagram e localização pública no Google são os canais disponíveis nos dados fornecidos. Telefone, WhatsApp, e-mail e inscrição na OAB não foram informados.
 
 ## Restrições técnicas
 - Next.js 16 App Router, React 19, Tailwind CSS 4 e Framer Motion.
-- Imagens otimizadas e servidas localmente.
-- Navegação responsiva, animações com suporte à preferência por movimento reduzido e metadados de busca atualizados.
+- Imagens locais, servidas pelo componente de imagem do Next.js.
+- Navegação responsiva, animações com suporte à preferência por movimento reduzido e metadados atualizados.
