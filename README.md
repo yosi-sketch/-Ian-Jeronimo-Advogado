@@ -1,20 +1,13 @@
-# Karine Lima — Advocacia Familiarista
+# Adelaide Ferreira Advogados Associados
 
-Site institucional de Karine Lima, advogada familiarista em Teófilo Otoni, Minas Gerais.
+Site institucional de advocacia Civil, Previdenciária e Trabalhista em Diamantina e região, Minas Gerais.
 
 ## Desenvolvimento
+Instale as dependências com npm install e inicie com npm run dev. Abra http://localhost:3000.
+Validação: npm run lint e npm run build.
 
-Instale as dependências com npm install e inicie o ambiente local com npm run dev.
-
-Abra http://localhost:3000 para visualizar o site.
-
-## Tecnologias
-
-- Next.js 16 com App Router
-- React 19
-- Tailwind CSS 4
-- Framer Motion
-
-Logo, retratos e conteúdos visuais ficam em `public/karine-lima`. Metadados, idioma e cor do navegador são definidos em `app/layout.tsx`.
-
-Ao definir o domínio de produção, configure `NEXT_PUBLIC_SITE_URL` para ativar os cartões de compartilhamento com a imagem da marca.
+## Marca e conteúdo
+Mídia em public, tema Tailwind CSS 4 em app/globals.css, metadados em app/layout.tsx e conteúdo em app/page.tsx.
+Contato: WhatsApp (38) 3531-6697. Instagram: @adelaideferreiraadvocacia.
+Configure NEXT_PUBLIC_SITE_URL com o domínio de produção para os cartões de compartilhamento.
+Dados e imagens fornecidos pelo cliente; e-mail não informado.

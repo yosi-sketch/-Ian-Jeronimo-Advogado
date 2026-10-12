@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -9,7 +9,7 @@ const displayFont = Cormorant_Garamond({
   display: "swap",
 });
 
-const bodyFont = Plus_Jakarta_Sans({
+const bodyFont = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -18,51 +18,43 @@ const bodyFont = Plus_Jakarta_Sans({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
-const shareImage = "/karine-lima/compartilhamento.jpg";
+const shareImage = "/Logotipo jurídico Adelaide Ferreira em azul-marinho.png";
 
 export const metadata: Metadata = {
   ...(metadataBase ? { metadataBase } : {}),
-  title: "Karine Lima | Advocacia Familiarista em Teófilo Otoni",
+  title: "Adelaide Ferreira Advogados Associados | Diamantina, MG",
   description:
-    "Advocacia familiarista em Teófilo Otoni, MG. Informações sobre divórcio, guarda, convivência familiar, pensão alimentícia e adoção.",
-  keywords: [
-    "Karine Lima",
-    "advogada familiarista em Teófilo Otoni",
-    "direito de família",
-    "divórcio em Teófilo Otoni",
-    "guarda e convivência familiar",
-    "pensão alimentícia",
-    "adoção",
-  ],
+    "Advocacia Civil, Previdenciária e Trabalhista em Diamantina, MG. Atendimento também em Felício dos Santos e Itamarandiba. Contato: (38) 3531-6697.",
+  keywords: ["Adelaide Ferreira Advogados Associados", "advocacia em Diamantina", "Direito Civil", "Direito Previdenciário", "Direito Trabalhista", "Felício dos Santos", "Itamarandiba"],
   openGraph: {
-    title: "Karine Lima | Advocacia Familiarista",
+    title: "Adelaide Ferreira Advogados Associados",
     description:
-      "Informação jurídica e atendimento cuidadoso em Direito de Família, em Teófilo Otoni, Minas Gerais.",
+      "Advocacia Civil, Previdenciária e Trabalhista em Diamantina e região, Minas Gerais.",
     locale: "pt_BR",
-    siteName: "Karine Lima",
+    siteName: "Adelaide Ferreira Advogados Associados",
     type: "website",
     images: metadataBase
       ? [
           {
             url: shareImage,
-            width: 1200,
-            height: 630,
-            alt: "Karine Lima — Advocacia Familiarista em Teófilo Otoni",
+            width: 2043,
+            height: 770,
+            alt: "Adelaide Ferreira Advogados Associados",
           },
         ]
       : undefined,
   },
   twitter: {
     card: metadataBase ? "summary_large_image" : "summary",
-    title: "Karine Lima | Advocacia Familiarista",
+    title: "Adelaide Ferreira Advogados Associados",
     description:
-      "Informação jurídica e atendimento cuidadoso em Direito de Família, em Teófilo Otoni, Minas Gerais.",
+      "Advocacia Civil, Previdenciária e Trabalhista em Diamantina e região, Minas Gerais.",
     ...(metadataBase ? { images: [shareImage] } : {}),
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#faf7f2",
+  themeColor: "#202640",
 };
 
 export default function RootLayout({

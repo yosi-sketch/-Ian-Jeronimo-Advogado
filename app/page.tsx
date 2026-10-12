@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, useRef, type ReactNode } from "react";
 import {
   AnimatePresence,
   MotionConfig,
@@ -11,20 +11,21 @@ import {
 import {
   ArrowRight,
   ArrowUpRight,
-  HeartHandshake,
+  Phone,
   MapPin,
   Menu,
   Scale,
-  ShieldCheck,
+  BriefcaseBusiness,
   Sparkles,
   UsersRound,
   X,
 } from "lucide-react";
 import GlowingButton from "./components/GlowingButton";
 
-const instagram = "https://www.instagram.com/karinelima.adv/";
-const maps =
-  "https://www.google.com/maps/search/?api=1&query=Karine+Lima+Advogada+Familiarista%2C+R.+Dr.+Manoel+Esteves%2C+333+-+Sala+210%2C+Centro%2C+Te%C3%B3filo+Otoni+-+MG%2C+39800-090";
+const instagram = "https://www.instagram.com/adelaideferreiraadvocacia/";
+const whatsapp = "https://wa.me/553835316697?text=" + encodeURIComponent("Olá! Gostaria de informações sobre o atendimento da Adelaide Ferreira Advogados Associados.");
+const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Adelaide Ferreira Advogados Associados, Beco Lulu Quirino, 116, Centro, Diamantina - MG, 39100-000");
+const reviews = "https://www.google.com/maps?cid=1761496273701398590";
 
 function InstagramMark({
   size = 16,
@@ -68,48 +69,22 @@ const stagger: Variants = {
 
 const areas = [
   {
-    title: "Divórcio e união estável",
-    icon: Scale,
-    summary:
-      "Orientação para compreender os caminhos de uma separação e organizar as questões que vêm com ela.",
-    details:
-      "O fim de uma relação pode envolver decisões pessoais, patrimoniais e familiares. A orientação jurídica ajuda a entender os procedimentos possíveis e a organizar cada etapa de acordo com a realidade apresentada.",
-    topics: [
-      "Divórcio",
-      "Reconhecimento e dissolução de união estável",
-      "Partilha de bens",
-    ],
+    title: "Direito Civil", icon: Scale,
+    summary: "Orientação para questões da vida civil, das relações pessoais e do patrimônio.",
+    details: "A atuação civil considera os documentos e as circunstâncias de cada caso para esclarecer direitos, deveres e os caminhos possíveis, tanto na prevenção de conflitos quanto no acompanhamento de demandas.",
+    topics: ["Relações e obrigações civis", "Contratos e patrimônio", "Análise e acompanhamento de demandas"],
   },
   {
-    title: "Guarda e convivência",
-    icon: UsersRound,
-    summary:
-      "Atenção às necessidades das crianças e à construção de acordos sobre a rotina familiar.",
-    details:
-      "Questões de guarda e convivência pedem cuidado com os vínculos e com a rotina das crianças. Cada contexto é analisado individualmente para que as pessoas envolvidas compreendam as possibilidades jurídicas.",
-    topics: ["Guarda", "Convivência familiar", "Revisão de acordos"],
+    title: "Direito Previdenciário", icon: UsersRound,
+    summary: "Atenção aos benefícios previdenciários e aos próximos passos de cada requerimento.",
+    details: "O atendimento previdenciário parte da análise do histórico e da documentação apresentada. A orientação esclarece os procedimentos relacionados a benefícios e considera as particularidades de cada situação.",
+    topics: ["Aposentadorias", "Benefícios previdenciários", "Requerimentos e acompanhamento de processos"],
   },
   {
-    title: "Pensão alimentícia",
-    icon: HeartHandshake,
-    summary:
-      "Informação sobre fixação, revisão e cumprimento da obrigação alimentar.",
-    details:
-      "As necessidades de quem recebe e as condições de quem paga são consideradas na análise da obrigação alimentar. O atendimento esclarece quais documentos e informações podem ser relevantes em cada situação.",
-    topics: [
-      "Fixação de alimentos",
-      "Revisão de valores",
-      "Cumprimento da obrigação",
-    ],
-  },
-  {
-    title: "Adoção e filiação",
-    icon: ShieldCheck,
-    summary:
-      "Orientação jurídica em etapas importantes de formação e reconhecimento dos vínculos familiares.",
-    details:
-      "A adoção e as questões de filiação envolvem procedimentos próprios e atenção aos direitos de cada pessoa. A orientação considera as particularidades da família e explica os próximos passos possíveis.",
-    topics: ["Adoção", "Reconhecimento de filiação", "Vínculos familiares"],
+    title: "Direito Trabalhista", icon: BriefcaseBusiness,
+    summary: "Clareza sobre direitos, deveres e questões que envolvem as relações de trabalho.",
+    details: "A orientação trabalhista ajuda a compreender as questões decorrentes da relação de trabalho. Cada demanda é analisada individualmente, com atenção às informações, aos documentos e às possibilidades jurídicas.",
+    topics: ["Relações de trabalho", "Direitos e obrigações trabalhistas", "Análise e acompanhamento de demandas"],
   },
 ];
 
@@ -158,13 +133,31 @@ export default function Home() {
   const [activeArea, setActiveArea] =
     useState<(typeof areas)[number] | null>(null);
 
+  const dialogRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     if (!activeArea) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const timer = window.setTimeout(() => dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus(), 0);
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveArea(null);
+      if (event.key !== "Tab") return;
+      const controls = dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+      if (!controls?.length) return;
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     };
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus();
+    };
   }, [activeArea]);
 
   const closeMenu = () => setMenuOpen(false);
@@ -176,18 +169,18 @@ export default function Home() {
           <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-5 px-5 sm:h-[88px] sm:px-8 lg:px-12">
             <a
               href="#inicio"
-              aria-label="Karine Lima — início"
+              aria-label="Adelaide Ferreira — início"
               onClick={closeMenu}
               className="shrink-0"
             >
               <Image
-                src="/karine-lima/karine-lima-logo.png"
-                width={1770}
-                height={478}
-                alt="Karine Lima"
-                priority
-                className="h-auto w-[154px] sm:w-[190px]"
-                sizes="(max-width: 640px) 154px, 190px"
+                src="/Logotipo jurídico Adelaide Ferreira em azul-marinho.png"
+                width={2043}
+                height={770}
+                alt="Adelaide Ferreira Advogados Associados"
+                preload
+                className="h-auto w-[180px] sm:w-[210px]"
+                sizes="(max-width: 640px) 180px, 210px"
               />
             </a>
             <nav
@@ -215,18 +208,18 @@ export default function Home() {
                 href={instagram}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram de Karine Lima"
+                aria-label="Instagram de Adelaide Ferreira"
                 className="grid size-10 place-items-center rounded-full border border-ink/15 text-ink transition-colors hover:border-brand-700 hover:text-brand-700"
               >
                 <InstagramMark size={17} strokeWidth={1.7} />
               </a>
               <GlowingButton
-                href={instagram}
+                href={whatsapp}
                 target="_blank"
                 size="sm"
                 className="rounded-full"
               >
-                Instagram <ArrowUpRight size={14} />
+                WhatsApp <ArrowUpRight size={14} />
               </GlowingButton>
             </div>
             <button
@@ -270,12 +263,12 @@ export default function Home() {
                   ))}
                   <a
                     className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-brand-700 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.13em] text-white"
-                    href={instagram}
+                    href={whatsapp}
                     target="_blank"
                     rel="noreferrer"
                     onClick={closeMenu}
                   >
-                    <InstagramMark size={15} /> Instagram
+                    <Phone size={15} /> WhatsApp
                   </a>
                 </div>
               </motion.nav>
@@ -297,35 +290,35 @@ export default function Home() {
             >
               <motion.p variants={reveal} className="eyebrow mb-7">
                 <span className="size-2 rounded-full bg-brand-600" />
-                Advocacia familiarista · Teófilo Otoni, MG
+                Advogados associados · Diamantina, MG
               </motion.p>
               <motion.h1
                 variants={reveal}
                 className="max-w-[720px] font-serif text-[3.3rem] leading-[0.98] tracking-[-0.045em] text-ink sm:text-6xl lg:text-[5.05rem]"
               >
-                Direito de família com{" "}
-                <span className="italic text-brand-700">clareza</span>, cuidado
-                e presença.
+                Advocacia com{" "}
+                <span className="italic text-brand-700">clareza</span>, estratégia
+                e cuidado.
               </motion.h1>
               <motion.p
                 variants={reveal}
                 className="mt-7 max-w-xl text-[15px] leading-7 text-ink-soft sm:text-base sm:leading-8"
               >
-                Orientação jurídica atenta às histórias e aos vínculos de cada
-                família, para que você compreenda as possibilidades e os
-                próximos passos.
+                Atuação em Direito Civil, Previdenciário e Trabalhista, com
+                atenção à sua história e orientação para compreender seus
+                direitos e os próximos passos.
               </motion.p>
               <motion.div
                 variants={reveal}
                 className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
               >
                 <GlowingButton
-                  href={instagram}
+                  href={whatsapp}
                   target="_blank"
                   size="lg"
                   className="rounded-full"
                 >
-                  <InstagramMark size={16} /> Contato pelo Instagram
+                  <Phone size={16} /> Fale pelo WhatsApp
                 </GlowingButton>
                 <a
                   href="#atuacao"
@@ -344,11 +337,11 @@ export default function Home() {
               >
                 <span className="inline-flex items-center gap-2">
                   <MapPin size={15} className="text-brand-700" />
-                  Centro · Teófilo Otoni
+                  Diamantina · Minas Gerais
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <Sparkles size={15} className="text-brand-700" />
-                  Contato pelo Instagram
+                  (38) 3531-6697
                 </span>
               </motion.div>
             </motion.div>
@@ -363,21 +356,21 @@ export default function Home() {
               className="relative mx-auto w-full max-w-[460px] lg:ml-auto lg:mr-3"
             >
               <div className="absolute -inset-3 rotate-2 border border-brand-600/25 sm:-inset-4" />
-              <div className="relative aspect-[0.82] overflow-hidden bg-[#e7ded4]">
+              <div className="relative aspect-[0.82] overflow-hidden bg-brand-100">
                 <Image
-                  src="/karine-lima/karine-retrato-alfaiataria.jpg"
-                  alt="Karine Lima, advogada familiarista"
+                  src="/imgi_41_799724609_18188151403397595_2357383396771871559_n.jpg"
+                  alt="Dra. Adelaide Ferreira, advogada"
                   fill
-                  priority
+                  preload
                   sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 40vw"
                   className="object-cover object-[50%_12%]"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/55 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8">
                   <div>
-                    <p className="font-serif text-2xl">Karine Lima</p>
+                    <p className="font-serif text-2xl">Adelaide Ferreira</p>
                     <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/80">
-                      Advocacia familiarista
+                      Advogados Associados
                     </p>
                   </div>
                   <span className="grid size-11 shrink-0 place-items-center rounded-full border border-white/60">
@@ -399,9 +392,9 @@ export default function Home() {
         >
           <div className="mx-auto grid max-w-7xl gap-6 px-5 py-7 sm:grid-cols-3 sm:gap-4 sm:px-8 lg:px-12">
             {[
-              ["Direito de família", "Atuação familiarista"],
-              ["Teófilo Otoni", "Endereço no Centro"],
-              ["Karine Lima", "Atendimento individual"],
+              ["3 áreas", "Civil, Previdenciária e Trabalhista"],
+              ["Diamantina", "Sede no Centro"],
+              ["Presencial", "Também em Felício dos Santos e Itamarandiba"],
             ].map(([value, label], index) => (
               <div
                 key={value}
@@ -436,7 +429,7 @@ export default function Home() {
             >
               <Heading
                 eyebrow="ÁREAS DE ATUAÇÃO"
-                description="Informação jurídica e acompanhamento cuidadoso, considerando as particularidades de cada situação familiar."
+                description="Informação jurídica e acompanhamento cuidadoso, considerando as particularidades de cada situação."
               >
                 Orientação nos momentos que{" "}
                 <span className="italic text-brand-700">pedem cuidado.</span>
@@ -450,7 +443,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.12 }}
               variants={stagger}
-              className="mt-12 grid gap-4 sm:grid-cols-2"
+              className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
               {areas.map((area, index) => {
                 const Icon = area.icon;
@@ -504,33 +497,22 @@ export default function Home() {
               variants={reveal}
               className="relative mx-auto w-full max-w-[560px] pb-5 pr-5 sm:pb-7 sm:pr-7"
             >
-              <div className="relative aspect-[0.93] overflow-hidden bg-[#e7ded4]">
+              <div className="relative aspect-[3/4] overflow-hidden bg-brand-100">
                 <Image
-                  src="/karine-lima/karine-retrato-sentada.jpg"
-                  alt="Karine Lima em seu escritório"
+                  src="/imgi_36_791996739_18188447527397595_8871868257366577399_n.jpg"
+                  alt="Material institucional da Adelaide Ferreira Advogados Associados, celebrando 18 anos de história"
                   fill
                   sizes="(max-width: 1024px) 85vw, 43vw"
-                  className="object-cover object-[48%_30%]"
+                  className="object-cover"
                 />
-              </div>
-              <div className="absolute -bottom-1 right-0 w-[37%] border-[6px] border-white bg-[#e7ded4] sm:-bottom-1">
-                <div className="relative aspect-[0.78] overflow-hidden">
-                  <Image
-                    src="/karine-lima/karine-retrato-escritorio.jpg"
-                    alt="Karine Lima em seu escritório"
-                    fill
-                    sizes="(max-width: 640px) 32vw, 180px"
-                    className="object-cover object-[50%_18%]"
-                  />
-                </div>
               </div>
               <div className="absolute -left-2 top-8 -z-10 size-24 border-l border-t border-brand-600/40 sm:-left-5 sm:top-10 sm:size-32" />
               <div className="absolute bottom-0 left-5 max-w-[245px] border-l-2 border-brand-600 bg-ivory px-5 py-4 shadow-card sm:left-8">
                 <p className="font-serif text-xl text-ink">
-                  Um espaço para ser ouvida
+                  18 anos de história
                 </p>
                 <p className="mt-1 text-[11px] leading-5 text-ink-soft">
-                  Atendimento com atenção a cada história.
+                  Uma trajetória dedicada à advocacia.
                 </p>
               </div>
             </motion.div>
@@ -541,7 +523,7 @@ export default function Home() {
               variants={stagger}
             >
               <motion.p variants={reveal} className="eyebrow">
-                SOBRE KARINE LIMA
+                SOBRE ADELAIDE FERREIRA
               </motion.p>
               <motion.h2
                 variants={reveal}
@@ -554,18 +536,19 @@ export default function Home() {
                 variants={reveal}
                 className="mt-6 max-w-xl text-[15px] leading-7 text-ink-soft"
               >
-                Karine Lima é advogada familiarista em Teófilo Otoni. Sua
-                atuação parte da escuta e da compreensão do contexto de cada
-                família, com explicações claras sobre os caminhos jurídicos
-                possíveis.
+                Adelaide Ferreira Advogados Associados atua nas áreas Civil,
+                Previdenciária e Trabalhista, com sede em Diamantina, Minas
+                Gerais. A escuta e a análise de cada situação orientam um
+                atendimento claro, próximo e responsável.
               </motion.p>
               <motion.p
                 variants={reveal}
                 className="mt-4 max-w-xl text-[15px] leading-7 text-ink-soft"
               >
-                Em assuntos que envolvem relações e vínculos importantes, ter
-                informação acessível ajuda a tomar decisões com mais
-                consciência sobre cada etapa.
+                Com uma trajetória de 18 anos de história, o escritório também
+                oferece atendimento presencial em Felício dos Santos e
+                Itamarandiba. Entre em contato para consultar a disponibilidade
+                e organizar seu atendimento.
               </motion.p>
               <motion.a
                 variants={reveal}
@@ -590,7 +573,7 @@ export default function Home() {
             <Heading
               eyebrow="UMA ATUAÇÃO COM CUIDADO"
               light
-              description="Em questões familiares, informação e escuta fazem parte de uma orientação responsável."
+              description="Informação, escuta e análise fazem parte de uma orientação jurídica responsável."
             >
               Clareza para compreender cada{" "}
               <span className="italic text-brand-200">etapa.</span>
@@ -616,7 +599,7 @@ export default function Home() {
                 [
                   "03",
                   "Respeito às particularidades",
-                  "Cada família tem uma história e circunstâncias que precisam ser consideradas.",
+                  "Cada pessoa tem uma história e circunstâncias que precisam ser consideradas.",
                 ],
               ].map(([number, title, description]) => (
                 <motion.div
@@ -641,16 +624,16 @@ export default function Home() {
 
         <section
           id="conteudos"
-          className="scroll-mt-24 bg-[#f0ebe5] py-20 sm:py-28"
+          className="scroll-mt-24 bg-brand-50 py-20 sm:py-28"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="grid items-end gap-7 md:grid-cols-[1fr_auto]">
               <Heading
                 eyebrow="CONTEÚDOS JURÍDICOS"
-                description="Informação sobre temas de Direito de Família compartilhada no perfil profissional."
+                description="Conteúdos e reflexões sobre a atuação jurídica compartilhados no perfil profissional."
               >
-                Temas que fazem parte da{" "}
-                <span className="italic text-brand-700">vida em família.</span>
+                Informação para conhecer melhor{" "}
+                <span className="italic text-brand-700">seus direitos.</span>
               </Heading>
               <a
                 href={instagram}
@@ -665,19 +648,13 @@ export default function Home() {
                 />
               </a>
             </div>
-            <div className="mt-11 grid gap-6 md:grid-cols-2">
+            <div className="mt-11 grid gap-6">
               {[
                 {
-                  image: "/karine-lima/conteudo-convivencia-familiar.jpg",
-                  alt: "Publicação de Karine Lima sobre convivência familiar e os vínculos dos filhos",
-                  eyebrow: "Convivência familiar",
-                  title: "Os vínculos dos filhos também merecem cuidado.",
-                },
-                {
-                  image: "/karine-lima/conteudo-adocao.jpg",
-                  alt: "Publicação de Karine Lima sobre adoção",
-                  eyebrow: "Adoção",
-                  title: "Informação jurídica para conhecer os passos da adoção.",
+                  image: "/imgi_29_802457796_18188613466397595_192858623231029896_n.jpg",
+                  alt: "Publicação de Adelaide Ferreira sobre processo, estratégia e técnica no Direito Previdenciário",
+                  eyebrow: "Direito Previdenciário",
+                  title: "Processo, estratégia e técnica em cada etapa.",
                 },
               ].map((post, index) => (
                 <motion.a
@@ -689,15 +666,15 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.62, delay: index * 0.08 }}
-                  className="group grid overflow-hidden border border-ink/10 bg-white sm:grid-cols-[0.78fr_1fr]"
+                  className="group grid overflow-hidden border border-ink/10 bg-white md:grid-cols-[0.85fr_1.15fr]"
                 >
-                  <div className="relative mx-auto aspect-[0.82] w-full max-w-[360px] overflow-hidden sm:mx-0 sm:max-w-none">
+                  <div className="relative mx-auto aspect-[1350/1688] w-full max-w-[480px] overflow-hidden">
                     <Image
                       src={post.image}
                       alt={post.alt}
                       fill
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 40vw, 28vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                      className="object-contain"
                     />
                   </div>
                   <div className="flex flex-col justify-end p-7 sm:p-8 lg:p-9">
@@ -724,7 +701,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
             <Heading
               eyebrow="PERFIL PÚBLICO"
-              description="Consulte as informações e avaliações públicas diretamente no perfil de Karine Lima no Google."
+              description="Conheça as experiências compartilhadas por clientes no perfil público de Adelaide Ferreira Advogados Associados no Google."
             >
               Informações de atendimento em um só{" "}
               <span className="italic text-brand-700">lugar.</span>
@@ -738,24 +715,24 @@ export default function Home() {
                 </span>
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-soft">
-                    Google
+                    Avaliações no Google
                   </span>
                   <p className="mt-1 font-serif text-2xl text-ink">
-                    Karine Lima
+                    24 avaliações no Google
                   </p>
                 </div>
               </div>
               <div className="relative mt-8 flex flex-wrap items-end justify-between gap-5">
                 <p className="max-w-xs text-[13px] leading-6 text-ink-soft">
-                  Endereço, informações do perfil e avaliações públicas.
+                  Consulte as avaliações e informações atualizadas diretamente no Google.
                 </p>
                 <a
-                  href={maps}
+                  href={reviews}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.13em] text-ink transition-colors hover:border-brand-700 hover:text-brand-700"
                 >
-                  Abrir perfil <ArrowUpRight size={14} />
+                  Ver avaliações <ArrowUpRight size={14} />
                 </a>
               </div>
             </div>
@@ -770,23 +747,22 @@ export default function Home() {
             <div>
               <Heading
                 eyebrow="CONTATO E LOCALIZAÇÃO"
-                description="Atendimento no Centro de Teófilo Otoni. Para informações, acesse o perfil profissional no Instagram."
+                description="Atendimento em Diamantina, Felício dos Santos e Itamarandiba. Fale com o escritório para consultar a disponibilidade."
               >
                 Um primeiro contato com{" "}
                 <span className="italic text-brand-700">tranquilidade.</span>
               </Heading>
               <div className="mt-9 flex flex-col items-start gap-4">
                 <GlowingButton
-                  href={instagram}
+                  href={whatsapp}
                   target="_blank"
                   size="lg"
                   className="rounded-full"
                 >
-                  <InstagramMark size={16} /> Instagram de Karine Lima
+                  <Phone size={16} /> Fale pelo WhatsApp
                 </GlowingButton>
-                <p className="text-[11px] leading-5 text-ink-soft">
-                  @karinelima.adv
-                </p>
+                <a href="tel:+553835316697" className="text-sm text-ink-soft hover:text-brand-700">Telefone: (38) 3531-6697</a>
+                <a href={instagram} target="_blank" rel="noreferrer" className="text-[11px] text-ink-soft hover:text-brand-700">@adelaideferreiraadvocacia</a>
               </div>
             </div>
             <div className="relative overflow-hidden border border-ink/10 bg-white p-7 sm:p-10">
@@ -800,16 +776,16 @@ export default function Home() {
                     Endereço
                   </p>
                   <p className="mt-1 font-serif text-2xl text-ink">
-                    Teófilo Otoni · MG
+                    Diamantina · MG
                   </p>
                 </div>
               </div>
               <address className="mt-7 max-w-md not-italic text-[14px] leading-7 text-ink-soft">
-                R. Dr. Manoel Esteves, 333 — sala 210
+                Beco Lulu Quirino, 116
                 <br />
-                Centro, Teófilo Otoni — MG
+                Centro, Diamantina — MG
                 <br />
-                39800-090, Brasil
+                39100-000, Brasil
               </address>
               <div className="my-7 h-px bg-ink/10" />
               <div className="flex flex-wrap items-center justify-between gap-4">
@@ -833,19 +809,19 @@ export default function Home() {
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-7 sm:flex-row sm:items-center">
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75">
-                KARINE LIMA · ADVOCACIA FAMILIARISTA
+                ADELAIDE FERREIRA · ADVOGADOS ASSOCIADOS
               </p>
               <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-tight sm:text-4xl">
                 Informação clara pode ajudar a organizar os próximos passos.
               </h2>
             </div>
             <a
-              href={instagram}
+              href={whatsapp}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-white px-6 py-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-800 transition-transform hover:-translate-y-0.5"
             >
-              Instagram <ArrowUpRight size={15} />
+              Fale pelo WhatsApp <ArrowUpRight size={15} />
             </a>
           </div>
         </section>
@@ -855,16 +831,16 @@ export default function Home() {
             <div>
               <div className="inline-flex bg-white px-3 py-2">
                 <Image
-                  src="/karine-lima/karine-lima-logo.png"
-                  width={1770}
-                  height={478}
-                  alt="Karine Lima"
-                  className="h-auto w-[160px]"
-                  sizes="160px"
+                  src="/Logotipo jurídico Adelaide Ferreira em azul-marinho.png"
+                  width={2043}
+                  height={770}
+                  alt="Adelaide Ferreira Advogados Associados"
+                  className="h-auto w-[240px]"
+                  sizes="240px"
                 />
               </div>
               <p className="mt-4 max-w-xs text-xs leading-6 text-white/65">
-                Advocacia familiarista em Teófilo Otoni, Minas Gerais.
+                Advocacia Civil, Previdenciária e Trabalhista em Diamantina e região.
               </p>
             </div>
             <div>
@@ -876,7 +852,7 @@ export default function Home() {
                   Áreas de atuação
                 </a>
                 <a className="footer-link" href="#sobre">
-                  Sobre Karine
+                  Sobre o escritório
                 </a>
                 <a className="footer-link" href="#avaliacoes">
                   Perfil no Google
@@ -897,7 +873,7 @@ export default function Home() {
                   rel="noreferrer"
                   className="footer-link inline-flex items-center gap-2"
                 >
-                  <InstagramMark size={14} /> @karinelima.adv
+                  <InstagramMark size={14} /> @adelaideferreiraadvocacia
                 </a>
                 <a
                   href={maps}
@@ -906,14 +882,14 @@ export default function Home() {
                   className="footer-link inline-flex items-start gap-2"
                 >
                   <MapPin size={14} className="mt-0.5 shrink-0" />
-                  R. Dr. Manoel Esteves, 333 — Centro
+                  Beco Lulu Quirino, 116 — Centro
                 </a>
               </div>
             </div>
           </div>
           <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/15 pt-5 text-[10px] text-white/50 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} Karine Lima. Todos os direitos
+              © {new Date().getFullYear()} Adelaide Ferreira Advogados Associados. Todos os direitos
               reservados.
             </p>
             <p>
@@ -933,6 +909,7 @@ export default function Home() {
               onClick={() => setActiveArea(null)}
             >
               <motion.section
+                ref={dialogRef}
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="area-dialog-title"
@@ -973,12 +950,12 @@ export default function Home() {
                   ))}
                 </ul>
                 <GlowingButton
-                  href={instagram}
+                  href={whatsapp}
                   target="_blank"
                   size="md"
                   className="mt-8 rounded-full"
                 >
-                  <InstagramMark size={15} /> Instagram de Karine Lima
+                  <Phone size={15} /> Conversar sobre esta área
                   <ArrowUpRight size={15} />
                 </GlowingButton>
               </motion.section>

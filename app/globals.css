@@ -2,33 +2,35 @@
 
 :root {
   color-scheme: light;
-  --brand-brown: #987153;
-  --brand-brown-dark: #704f3b;
-  --brand-brown-deep: #2d2119;
-  --brand-ink: #2b241f;
-  --brand-ink-soft: #71665e;
-  --brand-ivory: #faf7f2;
+  --brand-navy: #626a87;
+  --brand-navy-dark: #202640;
+  --brand-navy-deep: #151a30;
+  --brand-ink: #202640;
+  --brand-ink-soft: #626778;
+  --brand-ivory: #f7f6f2;
   --brand-paper: #ffffff;
 }
 
 @theme inline {
   --font-serif: var(--font-display), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-ink: #2b241f;
-  --color-ink-soft: #71665e;
-  --color-ivory: #faf7f2;
-  --color-brand-50: #f7f2ed;
-  --color-brand-100: #eee4da;
-  --color-brand-200: #dfcbb9;
-  --color-brand-300: #c9aa91;
-  --color-brand-400: #b18c6e;
-  --color-brand-500: #987153;
-  --color-brand-600: #805e46;
-  --color-brand-700: #704f3b;
-  --color-brand-800: #593e2f;
-  --color-brand-900: #402e23;
-  --color-brand-950: #2d2119;
-  --shadow-card: 0 18px 48px rgba(47, 35, 26, 0.1);
+  --font-sans: var(--font-body), "Montserrat", system-ui, sans-serif;
+  --color-ink: #202640;
+  --color-ink-soft: #626778;
+  --color-ivory: #f7f6f2;
+  --color-brand-50: #f1f2f5;
+  --color-brand-100: #e5e6eb;
+  --color-brand-200: #c9cddd;
+  --color-brand-300: #a8afc4;
+  --color-brand-400: #858eaa;
+  --color-brand-500: #626a87;
+  --color-brand-600: #424c6a;
+  --color-brand-700: #202640;
+  --color-brand-800: #1c223a;
+  --color-brand-900: #191e34;
+  --color-brand-950: #151a30;
+  --color-stone: #b8ad9c;
+  --color-marble: #e5e3de;
+  --shadow-card: 0 18px 48px rgba(32, 38, 64, 0.1);
 }
 
 html {
@@ -39,11 +41,11 @@ html {
 body {
   background: var(--brand-ivory);
   color: var(--brand-ink);
-  font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
+  font-family: var(--font-body), "Montserrat", system-ui, sans-serif;
 }
 
 ::selection {
-  background: #704f3b;
+  background: #202640;
   color: #fff;
 }
 
@@ -60,11 +62,11 @@ body {
 }
 
 .eyebrow {
-  color: #704f3b;
+  color: #202640;
 }
 
 .eyebrow-light {
-  color: #dfcbb9;
+  color: #c9cddd;
 }
 
 .eyebrow::before,
@@ -79,7 +81,7 @@ body {
 .nav-link {
   position: relative;
   padding-block: 0.5rem;
-  color: #625b59;
+  color: #626778;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -93,7 +95,7 @@ body {
   bottom: 0;
   left: 0;
   height: 1px;
-  background: #704f3b;
+  background: #202640;
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -101,7 +103,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #704f3b;
+  color: #202640;
 }
 
 .nav-link:hover::after {
@@ -113,7 +115,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #dfcbb9;
+  color: #c9cddd;
 }
 
 ::-webkit-scrollbar {
@@ -121,17 +123,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #eee4da;
+  background: #e5e6eb;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 2px solid #eee4da;
+  border: 2px solid #e5e6eb;
   border-radius: 999px;
-  background: #b18c6e;
+  background: #858eaa;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #704f3b;
+  background: #202640;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -145,3 +147,5 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+:focus-visible { outline: 2px solid #858eaa; outline-offset: 4px; }
