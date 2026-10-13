@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T17:33:42.752Z",
+  "title": "Design System: Ian Jerônimo · Advocacia Criminal",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "ink-soft",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "ivory",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "paper",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "brand-50": {
+        "role": "primary",
+        "displayName": "brand-50",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-100": {
+        "role": "primary",
+        "displayName": "brand-100",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-200": {
+        "role": "primary",
+        "displayName": "brand-200",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-300": {
+        "role": "primary",
+        "displayName": "brand-300",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-400": {
+        "role": "primary",
+        "displayName": "brand-400",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-500": {
+        "role": "primary",
+        "displayName": "brand-500",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-600": {
+        "role": "primary",
+        "displayName": "brand-600",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-700": {
+        "role": "primary",
+        "displayName": "brand-700",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-800": {
+        "role": "primary",
+        "displayName": "brand-800",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      },
+      "brand-900": {
+        "role": "neutral",
+        "displayName": "brand-900",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "brand-950": {
+        "role": "neutral",
+        "displayName": "brand-950",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "silver": {
+        "role": "neutral",
+        "displayName": "silver",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "marble": {
+        "role": "neutral",
+        "displayName": "marble",
+        "tonalRamp": [
+          "oklch(15% 0.008 110)",
+          "oklch(26% 0.008 110)",
+          "oklch(37% 0.008 110)",
+          "oklch(48% 0.008 110)",
+          "oklch(60% 0.008 110)",
+          "oklch(72% 0.008 110)",
+          "oklch(84% 0.008 110)",
+          "oklch(95% 0.008 110)"
+        ]
+      },
+      "hero-muted": {
+        "role": "neutral",
+        "displayName": "Texto de apoio do hero",
+        "tonalRamp": [
+          "oklch(15% 0.008 150)",
+          "oklch(26% 0.008 150)",
+          "oklch(37% 0.008 150)",
+          "oklch(48% 0.008 150)",
+          "oklch(60% 0.008 150)",
+          "oklch(72% 0.008 150)",
+          "oklch(84% 0.008 150)",
+          "oklch(95% 0.008 150)"
+        ]
+      },
+      "review-stars": {
+        "role": "primary",
+        "displayName": "Estrelas de avaliações",
+        "tonalRamp": [
+          "oklch(15% 0.08 85)",
+          "oklch(26% 0.08 85)",
+          "oklch(37% 0.08 85)",
+          "oklch(48% 0.08 85)",
+          "oklch(60% 0.08 85)",
+          "oklch(72% 0.08 85)",
+          "oklch(84% 0.08 85)",
+          "oklch(95% 0.08 85)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Título principal",
+        "purpose": "Hero em Montserrat bold e estilo normal."
+      },
+      "headline": {
+        "displayName": "Título de seção",
+        "purpose": "Títulos geométricos fortes em hierarquia responsiva."
+      },
+      "title": {
+        "displayName": "Título de cartão",
+        "purpose": "Identificação da atuação e painéis em Montserrat bold."
+      },
+      "body": {
+        "displayName": "Leitura",
+        "purpose": "Texto informativo em Manrope."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Ações compactas em caixa alta."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 18px 48px rgba(9, 13, 14, 0.12)",
+        "purpose": "Placas sobrepostas, modal e hover de cartões."
+      }
+    ],
+    "motion": [
+      {
+        "name": "reveal",
+        "value": "0.68s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Variante declarada de opacidade e deslocamento de 24px; conteúdo editorial usa initial=false e permanece visível desde a primeira renderização."
+      },
+      {
+        "name": "stagger",
+        "value": "0.1s; delayChildren: 0.04s",
+        "purpose": "Sequenciamento declarado nos grupos; initial=false preserva sua visibilidade inicial."
+      },
+      {
+        "name": "hero-photo",
+        "value": "0.9s cubic-bezier(0.22, 1, 0.36, 1); delay: 0.16s",
+        "purpose": "Transição declarada do retrato; initial=false mantém a fotografia visível desde a primeira renderização."
+      },
+      {
+        "name": "navigation",
+        "value": "180ms ease",
+        "purpose": "Cor e sublinhado da navegação."
+      },
+      {
+        "name": "button",
+        "value": "200ms",
+        "purpose": "Cor e deslocamento de 2px no botão primário."
+      },
+      {
+        "name": "card-hover",
+        "value": "300ms",
+        "purpose": "Borda, sombra e deslocamento de 4px."
+      },
+      {
+        "name": "mobile-menu",
+        "value": "220ms",
+        "purpose": "Altura e opacidade do menu móvel."
+      },
+      {
+        "name": "dialog",
+        "value": "240ms",
+        "purpose": "Opacidade, deslocamento e escala do modal."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário sm",
+      "kind": "button",
+      "refersTo": "button-primary-sm",
+      "description": "Contato direto em pílula dourada viva com texto preto.",
+      "html": "<button class=\"ds-primary-sm\">Fale pelo WhatsApp <svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary-sm{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.75rem 1.25rem;border:1px solid var(--color-gold);border-radius:9999px;background:var(--color-gold);color:var(--brand-ink);font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;text-align:center;transition:all 200ms;cursor:pointer}.ds-primary-sm:hover{background:var(--color-brand-400);border-color:var(--color-brand-400);transform:translateY(-2px)}.ds-primary-sm:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:3px}"
+    },
+    {
+      "name": "Botão primário md",
+      "kind": "button",
+      "refersTo": "button-primary-md",
+      "description": "Contato direto em pílula dourada viva com texto preto.",
+      "html": "<button class=\"ds-primary-md\">Fale pelo WhatsApp <svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary-md{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.5rem;border:1px solid var(--color-gold);border-radius:9999px;background:var(--color-gold);color:var(--brand-ink);font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-align:center;transition:all 200ms;cursor:pointer}.ds-primary-md:hover{background:var(--color-brand-400);border-color:var(--color-brand-400);transform:translateY(-2px)}.ds-primary-md:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:3px}"
+    },
+    {
+      "name": "Botão primário lg",
+      "kind": "button",
+      "refersTo": "button-primary-lg",
+      "description": "Contato direto em pílula dourada viva com texto preto.",
+      "html": "<button class=\"ds-primary-lg\">Fale pelo WhatsApp <svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary-lg{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:1rem 1.75rem;border:1px solid var(--color-gold);border-radius:9999px;background:var(--color-gold);color:var(--brand-ink);font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-align:center;transition:all 200ms;cursor:pointer}.ds-primary-lg:hover{background:var(--color-brand-400);border-color:var(--color-brand-400);transform:translateY(-2px)}.ds-primary-lg:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:3px}"
+    },
+    {
+      "name": "Botão outline",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ações auxiliares em painéis claros.",
+      "html": "<button class=\"ds-outline\">Abrir no mapa <svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-outline{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgb(9 13 14 / 15%);border-radius:9999px;background:transparent;color:var(--brand-ink);padding:0.75rem 1.25rem;font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;transition:color 150ms,border-color 150ms;cursor:pointer}.ds-outline:hover{border-color:var(--color-brand-700);color:var(--color-brand-700)}.ds-outline:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:4px}"
+    },
+    {
+      "name": "Botão inverse",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "Ação branca no encerramento dourado.",
+      "html": "<button class=\"ds-inverse\">Fale pelo WhatsApp <svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-inverse{display:inline-flex;align-items:center;gap:0.75rem;border:0;border-radius:9999px;background:white;color:var(--color-brand-800);padding:1rem 1.5rem;font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:transform 150ms;cursor:pointer}.ds-inverse:hover{transform:translateY(-2px)}.ds-inverse:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:4px}"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "description": "Links discretos com sublinhado revelado no hover.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação\"><a href=\"#inicio\">Início</a><a href=\"#atuacao\">Atuação</a><a href=\"#contato\">Contato</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:1.75rem;padding:1.25rem;background:var(--brand-ivory)}.ds-nav a{position:relative;color:var(--brand-ink-soft);padding:0.5rem 0;font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:color 180ms ease}.ds-nav a::after{position:absolute;inset:auto 0 0;height:1px;background:var(--brand-ink);content:\"\";transform:scaleX(0);transform-origin:left;transition:transform 180ms ease}.ds-nav a:hover{color:var(--brand-ink)}.ds-nav a:hover::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:4px}"
+    },
+    {
+      "name": "Cartão de atuação",
+      "kind": "card",
+      "refersTo": "area-card",
+      "description": "Painel plano com título geométrico forte e ação compacta.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-icon\"><svg aria-hidden=\"true\" width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M12 3v18M7 21h10M4 7h16M4 7 1 14h6L4 7ZM20 7l-3 7h6l-3-7Z\"/></svg></span><h3>Orientação criminal</h3><p>Clareza para compreender uma questão criminal e os caminhos que podem ser avaliados.</p><button type=\"button\">Saiba mais →</button></article>",
+      "css": ".ds-card{display:flex;flex-direction:column;min-height:290px;padding:1.75rem;background:white;border:1px solid rgb(9 13 14 / 10%);color:var(--brand-ink);transition:all 300ms}.ds-card:hover{transform:translateY(-4px);border-color:rgb(189 140 39 / 40%);box-shadow:0 18px 48px rgba(9,13,14,0.12)}.ds-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:9999px;background:var(--color-brand-50);color:var(--color-brand-700)}.ds-card h3{margin:1.75rem 0 0;font-family:var(--font-display),Montserrat,system-ui,sans-serif;font-size:1.8rem;font-weight:700;line-height:1.25}.ds-card p{margin:0.75rem 0 0;font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:13px;line-height:1.5rem;color:var(--brand-ink-soft)}.ds-card button{align-self:flex-start;margin-top:auto;padding:1.75rem 0 0;border:0;background:transparent;color:var(--color-brand-800);font-family:var(--font-body),Manrope,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer}.ds-card button:hover{color:var(--color-brand-700)}.ds-card button:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:4px}@media(min-width:640px){.ds-card{padding:2rem}}"
+    },
+    {
+      "name": "Cartão de avaliação",
+      "kind": "card",
+      "description": "Avaliação completa com cinco estrelas, autor e fonte.",
+      "html": "<figure class=\"ds-review\"><div class=\"ds-stars\" aria-label=\"5 estrelas\"><svg aria-hidden=\"true\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z\"/></svg><svg aria-hidden=\"true\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z\"/></svg><svg aria-hidden=\"true\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z\"/></svg><svg aria-hidden=\"true\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z\"/></svg><svg aria-hidden=\"true\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z\"/></svg></div><blockquote>“Ótimo advogado, me explicou tudo certinho e me salvou em um caso extremamente complexo! Recomendo de olhos fechados!”</blockquote><figcaption><span class=\"ds-avatar\" aria-hidden=\"true\">P</span><span>Phelipe Carvalho</span></figcaption><a href=\"https://www.google.com/maps/contrib/105018042187059165065/reviews?hl=pt-BR\">Ver avaliação no Google ↗</a></figure>",
+      "css": ".ds-review{display:flex;flex-direction:column;margin:0;padding:1.5rem;border:1px solid rgb(9 13 14 / 10%);background:var(--brand-ivory);color:var(--brand-ink);font-family:var(--font-body),Manrope,system-ui,sans-serif}.ds-stars{display:flex;gap:0.25rem;margin-bottom:1.25rem;color:#9a711d}.ds-review blockquote{margin:0;font-size:15px;line-height:1.75rem}.ds-review figcaption{display:flex;align-items:center;gap:0.75rem;margin-top:auto;padding-top:1.75rem;font-size:14px;font-weight:600}.ds-avatar{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;border-radius:9999px;background:var(--brand-ink);color:var(--color-gold);font-size:14px;font-weight:700}.ds-review a{display:inline-flex;align-items:center;align-self:flex-start;gap:0.5rem;margin-top:0.75rem;padding:0.5rem 0;font-size:12px;color:var(--color-brand-700);text-decoration:underline;text-underline-offset:4px}.ds-review a:hover{color:var(--color-brand-700)}.ds-review a:focus-visible{outline:2px solid var(--color-brand-700);outline-offset:4px}@media(min-width:640px){.ds-review{padding:1.75rem}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Clareza e presença",
+    "overview": "A identidade usa o logo IJ fornecido como referência e coloca a presença real de Ian Jerônimo em destaque. O hero preto contrasta com títulos brancos e dourado; as seções de leitura usam branco e neutros próximos da prata. O dourado vivo também identifica as ações com texto preto.\n\nMontserrat em peso forte dá aos títulos um caráter geométrico próximo à assinatura da marca; Manrope mantém a leitura clara. O logo permanece íntegro. O favicon ICO, o PNG e o ícone Apple são derivados do emblema IJ recortado do logo fornecido, sem reconstrução tipográfica.",
+    "keyCharacteristics": [
+      "Identidade IJ preservada com preto, dourado e prata.",
+      "Títulos geométricos em Montserrat bold e leitura em Manrope.",
+      "Hero preto e ações douradas com texto preto.",
+      "Superfícies brancas e neutras para leitura.",
+      "Fotografia real e avaliações completas com autor e fonte."
+    ],
+    "rules": [
+      {
+        "name": "The Contrast Rule",
+        "body": "Use dourado vivo com texto preto nas ações; mantenha branco e dourado claro sobre preto, reservando dourado profundo para texto sobre superfícies claras.",
+        "section": "colors"
+      },
+      {
+        "name": "The Emphasis Rule",
+        "body": "Preserve Montserrat bold e estilo normal nos títulos; destaque expressões curtas pela cor, sem itálico.",
+        "section": "typography"
+      },
+      {
+        "name": "The Resting Surface Rule",
+        "body": "Preserve cartões informativos planos no repouso e use a sombra card na interação ou nas peças sobrepostas.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** preservar o logo IJ fornecido e usar seu emblema original nos favicons.",
+      "**Do** combinar Montserrat bold e estilo normal em títulos com Manrope na leitura e nas ações.",
+      "**Do** usar dourado vivo com texto preto nas ações e contraste branco/dourado no hero preto.",
+      "**Do** manter foco visível, leitura confortável e respeito à preferência por movimento reduzido.",
+      "**Do** preservar fotografias reais e avaliações completas com autor e fonte."
+    ],
+    "donts": [
+      "**Don't** substituir a identidade IJ por outro nome, logo, emblema genérico ou paleta.",
+      "**Don't** reintroduzir títulos serifados ou itálicos nesta identidade.",
+      "**Don't** usar dourado vivo como texto longo sobre branco.",
+      "**Don't** aplicar o arredondamento de botões a todos os painéis informativos.",
+      "**Don't** abreviar avaliações fornecidas ou retirar seus nomes e fontes."
+    ]
+  }
+}

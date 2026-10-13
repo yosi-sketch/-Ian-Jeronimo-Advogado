@@ -2,35 +2,35 @@
 
 :root {
   color-scheme: light;
-  --brand-navy: #626a87;
-  --brand-navy-dark: #202640;
-  --brand-navy-deep: #151a30;
-  --brand-ink: #202640;
-  --brand-ink-soft: #626778;
-  --brand-ivory: #f7f6f2;
+  --brand-gold: #e1b64d;
+  --brand-gold-dark: #090d0e;
+  --brand-gold-deep: #090d0e;
+  --brand-ink: #090d0e;
+  --brand-ink-soft: #505650;
+  --brand-ivory: #f6f6f3;
   --brand-paper: #ffffff;
 }
 
 @theme inline {
-  --font-serif: var(--font-display), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-body), "Montserrat", system-ui, sans-serif;
-  --color-ink: #202640;
-  --color-ink-soft: #626778;
-  --color-ivory: #f7f6f2;
-  --color-brand-50: #f1f2f5;
-  --color-brand-100: #e5e6eb;
-  --color-brand-200: #c9cddd;
-  --color-brand-300: #a8afc4;
-  --color-brand-400: #858eaa;
-  --color-brand-500: #626a87;
-  --color-brand-600: #424c6a;
-  --color-brand-700: #202640;
-  --color-brand-800: #1c223a;
-  --color-brand-900: #191e34;
-  --color-brand-950: #151a30;
-  --color-stone: #b8ad9c;
-  --color-marble: #e5e3de;
-  --shadow-card: 0 18px 48px rgba(32, 38, 64, 0.1);
+  --font-serif: var(--font-display), "Montserrat", system-ui, sans-serif;
+  --font-sans: var(--font-body), "Manrope", system-ui, sans-serif;
+  --color-ink: #090d0e;
+  --color-ink-soft: #505650;
+  --color-ivory: #f6f6f3;
+  --color-brand-50: #f1f1ec;
+  --color-brand-100: #e5e4dc;
+  --color-brand-200: #f1d58f;
+  --color-brand-300: #dfc172;
+  --color-brand-400: #d6b557;
+  --color-brand-500: #e1b64d;
+  --color-brand-600: #bd8c27;
+  --color-brand-700: #76581c;
+  --color-brand-800: #56431c;
+  --color-brand-900: #282820;
+  --color-brand-950: #090d0e;
+  --color-stone: #92938e;
+  --color-marble: #e3e2db;
+  --shadow-card: 0 18px 48px rgba(9, 13, 14, 0.12);
 }
 
 html {
@@ -41,11 +41,11 @@ html {
 body {
   background: var(--brand-ivory);
   color: var(--brand-ink);
-  font-family: var(--font-body), "Montserrat", system-ui, sans-serif;
+  font-family: var(--font-body), "Manrope", system-ui, sans-serif;
 }
 
 ::selection {
-  background: #202640;
+  background: #090d0e;
   color: #fff;
 }
 
@@ -62,11 +62,11 @@ body {
 }
 
 .eyebrow {
-  color: #202640;
+  color: #090d0e;
 }
 
 .eyebrow-light {
-  color: #c9cddd;
+  color: #f1d58f;
 }
 
 .eyebrow::before,
@@ -81,7 +81,7 @@ body {
 .nav-link {
   position: relative;
   padding-block: 0.5rem;
-  color: #626778;
+  color: #505650;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -95,7 +95,7 @@ body {
   bottom: 0;
   left: 0;
   height: 1px;
-  background: #202640;
+  background: #090d0e;
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -103,7 +103,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #202640;
+  color: #090d0e;
 }
 
 .nav-link:hover::after {
@@ -115,7 +115,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #c9cddd;
+  color: #f1d58f;
 }
 
 ::-webkit-scrollbar {
@@ -123,17 +123,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5e6eb;
+  background: #e5e4dc;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 2px solid #e5e6eb;
+  border: 2px solid #e5e4dc;
   border-radius: 999px;
-  background: #858eaa;
+  background: #d6b557;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #202640;
+  background: #090d0e;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -148,4 +148,22 @@ body {
   }
 }
 
-:focus-visible { outline: 2px solid #858eaa; outline-offset: 4px; }
+:focus-visible { outline: 2px solid #76581c; outline-offset: 4px; }
+.brand-hero :focus-visible, footer :focus-visible { outline-color: #e1b64d; }
+
+/* Metallic accents sampled from the supplied IJ logo; dark gold preserves text contrast. */
+@theme inline { --color-gold: #e1b64d; --color-silver: #92938e; }
+h1, h2 { text-wrap: balance; }
+body { caret-color: #d5a83e; }
+
+/* Strong geometric lettering echoes the supplied wordmark. */
+.font-serif { font-weight: 700; }
+.italic { font-style: normal; }
+
+.brand-hero .text-ink-soft { color: #c9ccca; }
+.brand-hero .text-ink { color: #f6f6f3; }
+.brand-hero .text-brand-700 { color: #e1b64d; }
+.brand-hero .border-ink\/10 { border-color: #ffffff26; }
+.brand-hero .bg-ivory { background-color: #f6f6f3; color: #090d0e; }
+.brand-hero .border-brand-600\/25 { border-color: #e1b64d66; }
+.brand-hero a.bg-gold { color: #090d0e; }

@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Montserrat, Manrope } from "next/font/google";
 import "./globals.css";
 
-const displayFont = Cormorant_Garamond({
+const displayFont = Montserrat({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
-const bodyFont = Montserrat({
+const bodyFont = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -18,43 +18,48 @@ const bodyFont = Montserrat({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
-const shareImage = "/Logotipo jurídico Adelaide Ferreira em azul-marinho.png";
+const shareImage = "/Logotipo IJ Advocacia Criminal.png";
 
 export const metadata: Metadata = {
   ...(metadataBase ? { metadataBase } : {}),
-  title: "Adelaide Ferreira Advogados Associados | Diamantina, MG",
+  title: "Ian Jerônimo | Advocacia Criminal | Lavras, MG",
   description:
-    "Advocacia Civil, Previdenciária e Trabalhista em Diamantina, MG. Atendimento também em Felício dos Santos e Itamarandiba. Contato: (38) 3531-6697.",
-  keywords: ["Adelaide Ferreira Advogados Associados", "advocacia em Diamantina", "Direito Civil", "Direito Previdenciário", "Direito Trabalhista", "Felício dos Santos", "Itamarandiba"],
+    "Advogado criminalista em Lavras, MG. Orientação criminal, acompanhamento processual e atuação no Tribunal do Júri. Contato: (35) 99118-0166.",
+  keywords: ["Ian Jerônimo", "advogado criminalista em Lavras", "Direito Criminal", "Tribunal do Júri", "Lavras MG"],
+  icons: {
+    icon: [{ url: "/favicon-ij.ico?v=2", sizes: "32x32", type: "image/x-icon" }, { url: "/favicon-ij.png?v=2", sizes: "64x64", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon-ij.png?v=2", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon-ij.ico?v=2",
+  },
   openGraph: {
-    title: "Adelaide Ferreira Advogados Associados",
+    title: "Ian Jerônimo | Advocacia Criminal",
     description:
-      "Advocacia Civil, Previdenciária e Trabalhista em Diamantina e região, Minas Gerais.",
+      "Advocacia criminal em Lavras e região, Minas Gerais.",
     locale: "pt_BR",
-    siteName: "Adelaide Ferreira Advogados Associados",
+    siteName: "Ian Jerônimo | Advocacia Criminal",
     type: "website",
     images: metadataBase
       ? [
           {
             url: shareImage,
-            width: 2043,
-            height: 770,
-            alt: "Adelaide Ferreira Advogados Associados",
+            width: 2172,
+            height: 724,
+            alt: "Ian Jerônimo | Advocacia Criminal",
           },
         ]
       : undefined,
   },
   twitter: {
     card: metadataBase ? "summary_large_image" : "summary",
-    title: "Adelaide Ferreira Advogados Associados",
+    title: "Ian Jerônimo | Advocacia Criminal",
     description:
-      "Advocacia Civil, Previdenciária e Trabalhista em Diamantina e região, Minas Gerais.",
+      "Advocacia criminal em Lavras e região, Minas Gerais.",
     ...(metadataBase ? { images: [shareImage] } : {}),
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#202640",
+  themeColor: "#090d0e",
 };
 
 export default function RootLayout({
